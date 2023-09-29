@@ -45,6 +45,8 @@ public class registerAccount extends StoreHome
 		
 		//VERIFICATION OF USER
 		lp.myactpage();
+
+		//SCREENSHOT
 		File ss=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileHandler.copy(ss, new File("E:\\Pgms/ss2.png"));
 		String exp="pet_lover001";
