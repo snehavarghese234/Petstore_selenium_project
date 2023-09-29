@@ -6,8 +6,8 @@
       <class name="Test_Pkg_PS.registerAccount">
         <methods>
           <include name="urlload"/>
-          <include name="setup"/>
           <include name="set"/>
+          <include name="verifyLoginCred"/>
         </methods>
       </class> <!-- Test_Pkg_PS.registerAccount -->
     </classes>

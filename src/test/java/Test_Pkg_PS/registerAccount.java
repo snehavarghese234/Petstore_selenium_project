@@ -3,8 +3,13 @@ package Test_Pkg_PS;
 import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
+import java.io.File;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.io.FileHandler;
 import org.testng.Assert;
 import Base_pkg_PS.StoreHome;
 import Page_Pkg_PS.LoginPage;
@@ -40,6 +45,8 @@ public class registerAccount extends StoreHome
 		
 		//VERIFICATION OF USER
 		lp.myactpage();
+		File ss=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileHandler.copy(ss, new File("E:\\Pgms/ss2.png"));
 		String exp="pet_lover001";
 		WebElement m=driver.findElement(By.xpath("//td[contains(text(),'pet_lover001')]"));
 		String act=m.getText();
@@ -76,8 +83,19 @@ public class registerAccount extends StoreHome
 			sp.signin();
 			registerPage rs=new registerPage(driver);
 			rs.registerclick();
-			rs.setvalues("Pet_lover150", "qwerty", "qwerty", "anu", "varghese", "anu@gmail.com", "1234567895", "Address", "kochi", "kerala", "689510", "India");
+			rs.setvalues("Pet_lover158", "qwerty", "qwerty", "anu", "varghese", "anu@gmail.com", "1234567895", "Address", "kochi", "kerala", "689510", "India");
 			rs.saveinfo();
 		}	
+	/*@Test(priority=2)
+		public void screenshot() throws Exception
+		{
+			File ss=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			FileHandler.copy(ss, new File("E:\\Pgms/ss1.png"));
+			
+			//WebElement w=driver.findElement(By.xpath("//*[@id=\"tblcrtac\"]/tbody/tr[22]/td[3]/select[1]"));
+			//File src1=w.getScreenshotAs(OutputType.FILE);
+			//FileHandler.copy(src1, new File("./Screenshot//ss2.png"));
+		}*/
+
 	}
 
